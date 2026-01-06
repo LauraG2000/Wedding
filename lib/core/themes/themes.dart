@@ -7,7 +7,7 @@ class Themes {
 
   static final ThemeData mainTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: "Poppins",
+    fontFamily: "Raleway",
 
     colorScheme: ColorScheme(
       brightness: Brightness.light,
@@ -27,20 +27,23 @@ class Themes {
     splashFactory: NoSplash.splashFactory,
     scaffoldBackgroundColor: CustomColors.background,
 
-    // TEXT THEME (globale Poppins)
+    // TEXT THEME (globale Raleway)
     textTheme: const TextTheme(
+      displayLarge: TextStyle(fontSize: 50, fontWeight: FontWeight.w300, color: CustomColors.textPrimary),
+      displayMedium: TextStyle(fontSize: 28, fontWeight: FontWeight.w300, color: CustomColors.textPrimary),
       titleLarge: TextStyle(fontSize: 26, fontWeight: FontWeight.w700, color: CustomColors.textPrimary),
       titleMedium: TextStyle(fontSize: 22, fontWeight: FontWeight.w600, color: CustomColors.textPrimary),
+      titleSmall: TextStyle(fontSize: 18, fontWeight: FontWeight.w300, color: CustomColors.textPrimary),
       bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: CustomColors.textPrimary),
-      bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: CustomColors.textPrimary),
-      bodySmall: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: CustomColors.textPrimary),
+      bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: CustomColors.textPrimary),
+      bodySmall: TextStyle(fontSize: 12, fontWeight: FontWeight.w200, color: CustomColors.textPrimary),
     ),
 
     // FORM GLOBAL STYLE
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: CustomColors.card.withValues(alpha: 0.3),
-      hintStyle: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w400, fontSize: 12, color: CustomColors.textSecondary),
+      hintStyle: TextStyle(fontFamily: "Raleway", fontWeight: FontWeight.w400, fontSize: 12, color: CustomColors.textSecondary),
       contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 12),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(RadiusValues.r20),
@@ -55,7 +58,7 @@ class Themes {
         borderSide: BorderSide(color: darkBrown, width: 2),
       ),
       labelStyle: TextStyle(
-        fontFamily: "Poppins",
+        fontFamily: "Raleway",
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: CustomColors.textPrimary.withValues(alpha: 0.8),
@@ -72,13 +75,13 @@ class Themes {
 
     // DROPDOWN STYLE GLOBALE
     dropdownMenuTheme: DropdownMenuThemeData(
-      textStyle: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w400, fontSize: 12, color: CustomColors.textPrimary),
+      textStyle: TextStyle(fontFamily: "Raleway", fontWeight: FontWeight.w400, fontSize: 12, color: CustomColors.textPrimary),
       menuStyle: MenuStyle(
-        backgroundColor: MaterialStatePropertyAll(CustomColors.card),
-        shape: MaterialStatePropertyAll(
+        backgroundColor: WidgetStatePropertyAll(CustomColors.cardBorder),
+        shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(RadiusValues.r20),
-            side: BorderSide(color: CustomColors.cardBorder.withOpacity(0.8), width: 0.1),
+            side: BorderSide(color: CustomColors.cardBorder.withValues(alpha: 0.8), width: 0.1),
           ),
         ),
       ),

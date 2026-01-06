@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:joyflo_project/core/data/services/api_service.dart';
-import 'features/support/pages/support_home_page.dart';
+import 'features/support/pages/wedding_home_page.dart';
 import 'core/themes/themes.dart';
 
 void main() {
   // Inizializziamo il servizio Chopper come singleton
-  final ApiService apiService = ApiService.create(baseUrl: 'https://api-prove.joyflo.com');
+  final ApiService apiService = ApiService.create(baseUrl: 'http://34.122.221.12:8000');
 
   runApp(MyApp(apiService: apiService));
 }
@@ -20,11 +20,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Supporto',
+      title: 'Wedding',
       theme: Themes.mainTheme.copyWith(
         appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent, elevation: 0, surfaceTintColor: Colors.transparent),
       ),
-      home: SupportHomePage(),
+      home: WeddingHomePage(apiService: apiService),
       builder: (context, child) {
         return AnnotatedRegion<SystemUiOverlayStyle>(
           value: const SystemUiOverlayStyle(
