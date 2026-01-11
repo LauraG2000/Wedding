@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:joyflo_project/core/data/models/partecipant.dart';
-import 'package:joyflo_project/core/data/services/api_service.dart';
-import 'package:joyflo_project/shared/constants/padding_values.dart';
-import 'package:joyflo_project/shared/constants/spacing.dart';
+import 'package:wedding/core/data/models/partecipant.dart';
+import 'package:wedding/core/data/services/api_service.dart';
+import 'package:wedding/shared/constants/icon_size.dart';
+import 'package:wedding/shared/constants/padding_values.dart';
+import 'package:wedding/shared/constants/spacing.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'wedding_list.dart';
 
 class WeddingHomePage extends StatefulWidget {
-  final ApiService apiService; // aggiungi questa riga
+  final ApiService apiService;
 
   const WeddingHomePage({super.key, required this.apiService}); // richiedi apiService
 
@@ -243,6 +244,8 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
 
                             DropdownButtonFormField<String>(
                               initialValue: allergiaSelezionata,
+                              // AGGIUNGI QUESTA RIGA QUI
+                              dropdownColor: Theme.of(context).colorScheme.surfaceBright,
                               decoration: InputDecoration(
                                 labelText: 'Allergie',
                                 labelStyle: Theme.of(
@@ -272,21 +275,19 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                               },
                             ),
 
-                            // --- MOSTRA IL CAMPO "ALTRE ALLERGIE" SOLO SE SELEZIONATO "ALTRO" ---
-                            if (allergiaSelezionata == 'Altro') ...[
-                              const SizedBox(height: PaddingValues.p16),
-                              TextFormField(
-                                controller: _allergieManualiController,
-                                decoration: InputDecoration(
-                                  labelText: 'Altre allergie (facoltativo)',
-                                  hintText: 'Scrivi qui la tua allergia',
-                                  labelStyle: Theme.of(
-                                    context,
-                                  ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
-                                ),
-                                maxLines: 2,
+                            // --- MOSTRA IL CAMPO "ALTRE ALLERGIE" ---
+                            const SizedBox(height: PaddingValues.p16),
+                            TextFormField(
+                              controller: _allergieManualiController,
+                              decoration: InputDecoration(
+                                labelText: 'Altre allergie (se non presenti sopra)',
+                                hintText: 'Scrivi qui la tua allergia',
+                                labelStyle: Theme.of(
+                                  context,
+                                ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
                               ),
-                            ],
+                              maxLines: 2,
+                            ),
 
                             const SizedBox(height: PaddingValues.p16),
                             Column(
@@ -395,7 +396,7 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                     ),
                   ),
 
-                  const SizedBox(height: PaddingValues.p24),
+                  const SizedBox(height: PaddingValues.p20),
                   // ---- CONTAINER IBAN & LISTA ----
                   Center(
                     child: Container(
@@ -413,6 +414,13 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
+                          Icon(
+                            Icons.wallet_giftcard_rounded,
+                            size: isDesktopOrTablet ? IconSize.s48 : IconSize.s34,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                          const SizedBox(height: PaddingValues.p10),
+
                           Text(
                             'Se desiderate farci un pensiero, grazie di cuore!',
                             textAlign: TextAlign.center,
@@ -420,7 +428,18 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                           ),
                           const SizedBox(height: PaddingValues.p10),
                           Text(
-                            'IBAN: IT12A34567B8901234567890123',
+                            'IBAN: IT27K0874961742000000967536',
+                            textAlign: TextAlign.center,
+                            style: (isDesktopOrTablet ? Theme.of(context).textTheme.bodyMedium : Theme.of(context).textTheme.bodySmall)
+                                ?.copyWith(
+                                  fontFamily: 'AtkinsonHyperlegibleMono',
+                                  color: Theme.of(context).colorScheme.surfaceDim,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                          ),
+
+                          Text(
+                            'Intestatario: Furlan Edoardo',
                             textAlign: TextAlign.center,
                             style: (isDesktopOrTablet ? Theme.of(context).textTheme.bodyMedium : Theme.of(context).textTheme.bodySmall)
                                 ?.copyWith(
@@ -430,7 +449,7 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                                 ),
                           ),
                           // --- TESTO DI TRANSIZIONE CORDIALE ---
-                          const SizedBox(height: PaddingValues.p24),
+                          const SizedBox(height: PaddingValues.p20),
                           Text(
                             'In alternativa, per chi preferisse sostenere l\'inizio del nostro viaggio insieme in un altro modo, abbiamo preparato una lista dedicata:',
                             textAlign: TextAlign.center,

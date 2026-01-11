@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:joyflo_project/core/themes/custom_colors.dart';
-import 'package:joyflo_project/shared/constants/radius_values.dart';
+import 'package:wedding/core/themes/custom_colors.dart';
+import 'package:wedding/shared/constants/radius_values.dart';
 
 class Themes {
   static final Color darkBrown = CustomColors.primary;
@@ -20,6 +20,7 @@ class Themes {
       onSurface: CustomColors.background,
       surfaceContainerHighest: CustomColors.iconAdd,
       surface: CustomColors.card,
+      surfaceBright: CustomColors.dropdown,
       surfaceDim: CustomColors.textPrimary,
       shadow: CustomColors.cardBorder,
     ),
@@ -77,7 +78,9 @@ class Themes {
     dropdownMenuTheme: DropdownMenuThemeData(
       textStyle: TextStyle(fontFamily: "Raleway", fontWeight: FontWeight.w400, fontSize: 12, color: CustomColors.textPrimary),
       menuStyle: MenuStyle(
-        backgroundColor: WidgetStatePropertyAll(CustomColors.cardBorder),
+        // Questo cambia lo sfondo del menu a tendina quando è aperto
+        backgroundColor: WidgetStatePropertyAll(CustomColors.dropdown),
+        surfaceTintColor: const WidgetStatePropertyAll(Colors.transparent), // Evita riflessi violacei in Material 3
         shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(RadiusValues.r20),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:joyflo_project/shared/constants/padding_values.dart';
-import 'package:joyflo_project/shared/constants/spacing.dart';
+import 'package:wedding/shared/constants/icon_size.dart';
+import 'package:wedding/shared/constants/padding_values.dart';
+import 'package:wedding/shared/constants/spacing.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class WeddingList extends StatelessWidget {
@@ -22,21 +23,19 @@ class WeddingList extends StatelessWidget {
           // ---- BACKGROUND ----
           Image.asset('assets/icons/bg.png', fit: BoxFit.cover),
 
+          // ---- CONTENUTO (SOTTO) ----
           SafeArea(
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(PaddingValues.p12),
               child: Column(
                 children: [
-                  // ---- TITOLO ----
                   Text(
                     'Lista Matrimonio',
                     textAlign: TextAlign.center,
                     style: isDesktopOrTablet ? Theme.of(context).textTheme.displayLarge : Theme.of(context).textTheme.displayMedium,
                   ),
-
                   const SizedBox(height: PaddingValues.p10),
 
-                  // ---- SOTTOTITOLO ----
                   Text(
                     'Laura & Edoardo',
                     textAlign: TextAlign.center,
@@ -50,9 +49,8 @@ class WeddingList extends StatelessWidget {
                         ),
                   ),
 
-                  const SizedBox(height: PaddingValues.p24),
+                  const SizedBox(height: PaddingValues.p12),
 
-                  // ---- CONTAINER LISTA ----
                   Center(
                     child: Container(
                       constraints: const BoxConstraints(maxWidth: 700),
@@ -76,121 +74,128 @@ class WeddingList extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodySmall,
                           ),
 
+                          const SizedBox(height: PaddingValues.p16),
+
+                          Text(
+                            'Prima di qualsiasi acquisto,',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w700),
+                          ),
+
+                          Text(
+                            'vi chiediamo gentilmente di contattare la mamma di Laura su WhatsApp per evitare regali doppi o per qualsiasi informazione.',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+
+                          const SizedBox(height: PaddingValues.p12),
+
+                          Text(
+                            'Mara Cell.',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w700),
+                          ),
+
+                          Text(
+                            '+39 3894449387',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(
+                              context,
+                            ).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w300, fontFamily: 'AtkinsonHyperlegibleMono'),
+                          ),
+
+                          const SizedBox(height: PaddingValues.p12),
+
+                          Text(
+                            'Idee regalo – Budget 100 / 170',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+                          ),
+                          const SizedBox(height: PaddingValues.p16),
+
+                          _item(
+                            context,
+                            icon: Icons.luggage,
+                            iconSize: IconSize.s32,
+                            title: 'Valigia S',
+                            subtitle: 'Un contributo per la nostra luna di miele',
+                            link: 'https://www.amazon.it/dp/B0CX55DWYJ',
+                          ),
+                          const SizedBox(height: PaddingValues.p16),
+
+                          _item(
+                            context,
+                            icon: Icons.width_wide_outlined,
+                            iconSize: IconSize.s27,
+                            title: 'Tappeto Sari Moderno (PRIMA scelta tra i tappeti)',
+                            subtitle:
+                                'Dimensione: 140x190 cm -> Se dovesse risultare esaurito, abbiamo selezionato un\'alternativa simile che trovate qui sotto',
+                            link: 'https://tapiso.it/product/tappeto-sari-moderno-marrone-beige-scuro-astratto-ombre/',
+                          ),
+
+                          _item(
+                            context,
+                            icon: Icons.width_wide_outlined,
+                            iconSize: IconSize.s27,
+                            title: 'Tappeto Crystal (seconda scelta in caso di esaurimento del precedente)',
+                            subtitle: 'Dimensione: 140x200cm - colore: Marrone Beige Crema',
+                            link: 'https://tapiso.it/product/tappeto-crystal-marrone-beige-crema-righe-effetto-3d/',
+                          ),
+
+                          const SizedBox(height: PaddingValues.p16),
+
+                          Text(
+                            'Idee regalo – Budget 200 / 250',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+                          ),
+                          const SizedBox(height: PaddingValues.p16),
+
+                          _item(
+                            context,
+                            icon: Icons.luggage,
+                            iconSize: IconSize.s48,
+                            title: 'Valigia L',
+                            subtitle: 'Un contributo per la nostra luna di miele',
+                            link: 'https://www.amazon.it/dp/B0CX53SSP6',
+                          ),
+                          const SizedBox(height: PaddingValues.p16),
+
+                          _item(
+                            context,
+                            icon: Icons.table_bar_outlined,
+                            iconSize: IconSize.s27,
+                            title: 'Tavolino ovale (PRIMA scelta tra i tavolini)',
+                            subtitle: 'Colore: nero',
+                            link:
+                                'https://www.maisonsdumonde.com/IT/it/p/tavolino-ovale-con-piano-sollevabile-effetto-legno-nero-gaby-M25012527.htm',
+                          ),
+                          _item(
+                            context,
+                            icon: Icons.table_bar_outlined,
+                            iconSize: IconSize.s27,
+                            title: 'Tavolino in magnesite (seconda scelta in caso di esaurimento del precedente)',
+                            subtitle: 'Colore: nero',
+                            link:
+                                'https://www.maisonsdumonde.com/IT/it/p/tavolino-da-salotto-interno-esterno-in-magnesite-nera-M25155173.htm',
+                          ),
+
                           const SizedBox(height: PaddingValues.p24),
 
-                          // ---- ITEM 1 ----
-                          InkWell(
-                            onTap: () => _openLink('https://www.esempio-viaggio-nozze.it'),
-                            child: Container(
-                              padding: const EdgeInsets.all(PaddingValues.p16),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                border: Border.all(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.3)),
-                              ),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.flight, color: Theme.of(context).colorScheme.primary),
-                                  const SizedBox(width: PaddingValues.p16),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Viaggio di nozze',
-                                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
-                                        ),
-                                        const SizedBox(height: 4),
-                                        Text(
-                                          'Un contributo per la nostra luna di miele',
-                                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                            color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.8),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  const Icon(Icons.open_in_new, size: 18),
-                                ],
-                              ),
-                            ),
+                          Text(
+                            'Idee regalo – Budget 260+',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
                           ),
-
                           const SizedBox(height: PaddingValues.p16),
 
-                          // ---- ITEM 2 ----
-                          InkWell(
-                            onTap: () => _openLink('https://www.esempio-arredamento.it'),
-                            child: Container(
-                              padding: const EdgeInsets.all(PaddingValues.p16),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                border: Border.all(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.3)),
-                              ),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.chair, color: Theme.of(context).colorScheme.primary),
-                                  const SizedBox(width: PaddingValues.p16),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Casa & arredamento',
-                                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
-                                        ),
-                                        const SizedBox(height: 4),
-                                        Text(
-                                          'Dettagli per costruire il nostro nido',
-                                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                            color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.8),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  const Icon(Icons.open_in_new, size: 18),
-                                ],
-                              ),
-                            ),
-                          ),
-
-                          const SizedBox(height: PaddingValues.p16),
-
-                          // ---- ITEM 3 ----
-                          InkWell(
-                            onTap: () => _openLink('https://www.esempio-esperienze.it'),
-                            child: Container(
-                              padding: const EdgeInsets.all(PaddingValues.p16),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                border: Border.all(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.3)),
-                              ),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.favorite, color: Theme.of(context).colorScheme.primary),
-                                  const SizedBox(width: PaddingValues.p16),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Esperienze',
-                                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
-                                        ),
-                                        const SizedBox(height: 4),
-                                        Text(
-                                          'Momenti da vivere e ricordare',
-                                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                            color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.8),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  const Icon(Icons.open_in_new, size: 18),
-                                ],
-                              ),
-                            ),
+                          _item(
+                            context,
+                            icon: Icons.light,
+                            iconSize: IconSize.s27,
+                            title: 'Lampada da terra (x2)',
+                            subtitle: 'Ci piacerebbe una coppia di queste lampade per il soggiorno',
+                            link: 'https://www.amazon.it/ALEEIK-Semplice-Paralume-Illuminazione-Soggiorno/dp/B0CP9CTGYF',
                           ),
                         ],
                       ),
@@ -202,7 +207,81 @@ class WeddingList extends StatelessWidget {
               ),
             ),
           ),
+
+          // ---- BACK BUTTON (SOPRA TUTTO) ----
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 12.0, top: 12.0),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.9),
+                      shape: BoxShape.circle,
+                      boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 4, offset: Offset(0, 2))],
+                    ),
+                    padding: const EdgeInsets.all(10.0),
+                    child: const Icon(Icons.arrow_back, size: 24, color: Colors.black),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget _item(
+    BuildContext context, {
+    required IconData icon,
+    required double iconSize,
+    required String title,
+    String? subtitle,
+    required String link,
+  }) {
+    return InkWell(
+      onTap: () => _openLink(link),
+      child: Container(
+        padding: const EdgeInsets.all(PaddingValues.p16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.3)),
+        ),
+        child: Row(
+          children: [
+            SizedBox(
+              width: Spacing.h50,
+              child: Center(
+                child: Icon(icon, size: iconSize, color: Theme.of(context).colorScheme.primary),
+              ),
+            ),
+
+            const SizedBox(width: PaddingValues.p16),
+
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title, style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600)),
+                  const SizedBox(height: 4),
+                  Text(
+                    subtitle ?? '',
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.8)),
+                  ),
+                ],
+              ),
+            ),
+
+            const Icon(Icons.open_in_new, size: 18),
+          ],
+        ),
       ),
     );
   }

@@ -18,4 +18,5 @@ class CustomColors {
   static const Color cardBorder = Color.fromRGBO(181, 181, 181, 1);
   static const Color iconAdd = Color.fromRGBO(129, 129, 129, 1);
   static const Color iconAddBg = Color.fromRGBO(217, 217, 217, 1);
+  static const Color dropdown = Color.fromRGBO(237, 220, 202, 1);
 }

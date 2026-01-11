@@ -11,6 +11,7 @@ class Spacing {
   static const double v40 = 40.0;
   static const double v49 = 49.0;
   static const double v50 = 50.0;
+  static const double v60 = 60.0;
   static const double v80 = 80.0;
   static const double v100 = 100.0;
   static const double v150 = 150.0;
@@ -29,6 +30,7 @@ class Spacing {
   static const double h40 = 40.0;
   static const double h49 = 49.0;
   static const double h50 = 50.0;
+  static const double h60 = 60.0;
   static const double h80 = 80.0;
   static const double h90 = 90.0;
   static const double h100 = 100.0;
