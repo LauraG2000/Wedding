@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wedding/core/data/models/partecipant.dart';
 import 'package:wedding/core/data/services/api_service.dart';
+import 'package:wedding/features/support/pages/invalid_page.dart';
 import 'package:wedding/features/support/pages/wedding_home_evening.dart';
 import 'package:wedding/shared/constants/icon_size.dart';
 import 'package:wedding/shared/constants/padding_values.dart';
@@ -506,6 +507,13 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                           //     ).push(MaterialPageRoute(builder: (_) => WeddingHomeEvening(apiService: widget.apiService)));
                           //   },
                           //   child: const Text('TAGLIO TORTA'),
+                          // ),
+
+                          // ElevatedButton(
+                          //   onPressed: () {
+                          //     Navigator.of(context).push(MaterialPageRoute(builder: (_) => InvalidPage()));
+                          //   },
+                          //   child: const Text('invalid'),
                           // ),
                         ],
                       ),

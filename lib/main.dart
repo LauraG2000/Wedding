@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wedding/core/data/services/api_service.dart';
-import 'features/support/pages/wedding_home_page.dart';
 import 'core/themes/themes.dart';
+import 'landing/landing_page.dart';
 
 void main() {
   // Inizializziamo il servizio Chopper come singleton
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: Themes.mainTheme.copyWith(
         appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent, elevation: 0, surfaceTintColor: Colors.transparent),
       ),
-      home: WeddingHomePage(apiService: apiService),
+      home: LandingPage(apiService: apiService),
       builder: (context, child) {
         return AnnotatedRegion<SystemUiOverlayStyle>(
           value: const SystemUiOverlayStyle(
