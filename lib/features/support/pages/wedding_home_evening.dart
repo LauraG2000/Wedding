@@ -317,7 +317,6 @@ class _WeddingHomeEveningState extends State<WeddingHomeEvening> {
 
                             TextFormField(
                               controller: _numeroAdultiController,
-                              decoration: const InputDecoration(labelText: 'n°'),
                               keyboardType: TextInputType.number,
                               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                               validator: (v) {

@@ -130,7 +130,8 @@ class WeddingList extends StatelessWidget {
                             title: 'Tappeto Sari Moderno (PRIMA scelta tra i tappeti)',
                             subtitle:
                                 'Dimensione: 140x190 cm -> Se dovesse risultare esaurito, abbiamo selezionato un\'alternativa simile che trovate qui sotto',
-                            link: 'https://tapiso.it/product/tappeto-sari-moderno-marrone-beige-scuro-astratto-ombre/',
+                            link:
+                                'https://tapiso.it/cassa/?_gl=1*12e15pc*_up*MQ..*_ga*MTM4MzIwODIzMy4xNzY4NDMxNTc1*_ga_C3SEW66PC6*czE3Njg0MzE1NzQkbzEkZzAkdDE3Njg0MzE1NzQkajYwJGwwJGg0ODc1MTk4Njg.',
                           ),
 
                           _item(
@@ -139,7 +140,8 @@ class WeddingList extends StatelessWidget {
                             iconSize: IconSize.s27,
                             title: 'Tappeto Crystal (seconda scelta in caso di esaurimento del precedente)',
                             subtitle: 'Dimensione: 140x200cm - colore: Marrone Beige Crema',
-                            link: 'https://tapiso.it/product/tappeto-crystal-marrone-beige-crema-righe-effetto-3d/',
+                            link:
+                                'https://tapiso.it/cassa/?_gl=1*1bjz68a*_up*MQ..*_ga*MzQ0MjI0NDYxLjE3Njg0MzE0NTI.*_ga_C3SEW66PC6*czE3Njg0MzE0NDkkbzEkZzAkdDE3Njg0MzE0NDkkajYwJGwwJGg5MDk0MTk4MDA.',
                           ),
 
                           const SizedBox(height: PaddingValues.p16),

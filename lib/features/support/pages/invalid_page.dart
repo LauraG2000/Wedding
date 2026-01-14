@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:wedding/features/support/pages/wedding_home_page.dart';
 import 'package:wedding/shared/constants/padding_values.dart';
 import 'package:wedding/shared/constants/spacing.dart';
 import 'package:wedding/features/support/pages/wedding_home_evening.dart';
+import 'package:wedding/core/data/services/api_service.dart';
 
 class InvalidPage extends StatelessWidget {
-  const InvalidPage({super.key});
+  final ApiService apiService;
+
+  const InvalidPage({super.key, required this.apiService});
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +52,22 @@ class InvalidPage extends StatelessWidget {
                         'Per accedere, utilizza il QR code ricevuto.',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodySmall,
+                      ),
+
+                      const SizedBox(height: PaddingValues.p12),
+
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (_) => WeddingHomeEvening(apiService: apiService)));
+                        },
+                        child: const Text('Apri Home Sera (debug)'),
+                      ),
+
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (_) => WeddingHomePage(apiService: apiService)));
+                        },
+                        child: const Text('Apri Home Giorno (debug)'),
                       ),
                     ],
                   ),

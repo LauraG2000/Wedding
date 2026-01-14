@@ -37,7 +37,7 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
       _numeroAdultiController.text = '0';
       _numeroBambiniController.text = '0';
       parteciperai = 'Si';
-      allergiaSelezionata = 'Nessuna';
+      allergiaSelezionata = 'Nessuna allergia alimentare';
     });
   }
 
@@ -45,9 +45,18 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
   String bambini = 'No';
 
   // --- ALLERGIE ---
-  final List<String> allergieDisponibili = ['Nessuna', 'Glutine', 'Lattosio', 'Frutta a guscio', 'Crostacei', 'Uova', 'Pesce', 'Altro'];
+  final List<String> allergieDisponibili = [
+    'Nessuna allergia alimentare',
+    'Glutine',
+    'Lattosio',
+    'Frutta a guscio',
+    'Crostacei',
+    'Uova',
+    'Pesce',
+    'Altro',
+  ];
 
-  String allergiaSelezionata = 'Nessuna';
+  String allergiaSelezionata = 'Nessuna allergia alimentare';
 
   final TextEditingController _allergieManualiController = TextEditingController();
   final TextEditingController _nomeController = TextEditingController();
@@ -234,7 +243,7 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
 
                   const SizedBox(height: PaddingValues.p24),
 
-                  // ---- CONTAINER FORM (IDENTICO AL TUO) ----
+                  // ---- CONTAINER FORM ----
                   Center(
                     child: Container(
                       constraints: const BoxConstraints(maxWidth: 700),
@@ -279,7 +288,6 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                               // AGGIUNGI QUESTA RIGA QUI
                               dropdownColor: Theme.of(context).colorScheme.surfaceBright,
                               decoration: InputDecoration(
-                                labelText: 'Allergie',
                                 labelStyle: Theme.of(
                                   context,
                                 ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
@@ -371,7 +379,6 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
 
                             TextFormField(
                               controller: _numeroAdultiController,
-                              decoration: const InputDecoration(labelText: 'n°'),
                               keyboardType: TextInputType.number,
                               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                               validator: (v) {
@@ -391,7 +398,6 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
 
                             TextFormField(
                               controller: _numeroBambiniController,
-                              decoration: const InputDecoration(labelText: 'n°'),
                               keyboardType: TextInputType.number,
                               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                             ),

@@ -35,7 +35,7 @@ class _LandingPageState extends State<LandingPage> {
       }
 
       // ❌ QUALSIASI ALTRO CASO (compreso solo dominio)
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const InvalidPage()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => InvalidPage(apiService: widget.apiService)));
     });
   }
 
