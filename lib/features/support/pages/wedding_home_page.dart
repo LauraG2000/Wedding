@@ -319,13 +319,13 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                             const SizedBox(height: PaddingValues.p16),
                             TextFormField(
                               controller: _allergieManualiController,
+                              maxLines: 1,
                               decoration: InputDecoration(
                                 labelText: 'Altre allergie (se non presenti sopra)',
                                 labelStyle: Theme.of(
                                   context,
                                 ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
                               ),
-                              maxLines: 2,
                             ),
 
                             const SizedBox(height: PaddingValues.p16),
@@ -410,21 +410,21 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                               ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
                             ),
 
-                            TextFormField(
-                              controller: _noteController,
-                              decoration: InputDecoration(
-                                labelStyle: Theme.of(
-                                  context,
-                                ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
-                                labelText: 'Note',
+                            SizedBox(
+                              child: TextFormField(
+                                controller: _noteController,
+                                maxLines: 1,
+                                textAlignVertical: TextAlignVertical.center,
+                                decoration: InputDecoration(
+                                  labelText: 'Note',
+                                  labelStyle: Theme.of(
+                                    context,
+                                  ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
+                                ),
                               ),
-                              maxLines: 3,
                             ),
                             const SizedBox(height: PaddingValues.p32),
-                            ElevatedButton(
-                              onPressed: submitForm, // <- qui chiami direttamente la funzione
-                              child: const Text('Invia'),
-                            ),
+                            ElevatedButton(onPressed: submitForm, child: const Text('Invia')),
                           ],
                         ),
                       ),
@@ -505,22 +505,6 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                           ),
 
                           const SizedBox(height: PaddingValues.p10),
-
-                          // ElevatedButton(
-                          //   onPressed: () {
-                          //     Navigator.of(
-                          //       context,
-                          //     ).push(MaterialPageRoute(builder: (_) => WeddingHomeEvening(apiService: widget.apiService)));
-                          //   },
-                          //   child: const Text('TAGLIO TORTA'),
-                          // ),
-
-                          // ElevatedButton(
-                          //   onPressed: () {
-                          //     Navigator.of(context).push(MaterialPageRoute(builder: (_) => InvalidPage()));
-                          //   },
-                          //   child: const Text('invalid'),
-                          // ),
                         ],
                       ),
                     ),

@@ -328,27 +328,27 @@ class _WeddingHomeEveningState extends State<WeddingHomeEvening> {
                             const SizedBox(height: PaddingValues.p16),
 
                             Text(
-                              'Spazio per note (es: vegano/a)',
+                              'Spazio per note',
                               style: Theme.of(
                                 context,
                               ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
                             ),
 
-                            TextFormField(
-                              controller: _noteController,
-                              decoration: InputDecoration(
-                                labelStyle: Theme.of(
-                                  context,
-                                ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
-                                labelText: 'Note',
+                            SizedBox(
+                              child: TextFormField(
+                                controller: _noteController,
+                                maxLines: 1,
+                                textAlignVertical: TextAlignVertical.center,
+                                decoration: InputDecoration(
+                                  labelText: 'Note',
+                                  labelStyle: Theme.of(
+                                    context,
+                                  ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
+                                ),
                               ),
-                              maxLines: 3,
                             ),
                             const SizedBox(height: PaddingValues.p32),
-                            ElevatedButton(
-                              onPressed: submitForm, // <- qui chiami direttamente la funzione
-                              child: const Text('Invia'),
-                            ),
+                            ElevatedButton(onPressed: submitForm, child: const Text('Invia')),
                           ],
                         ),
                       ),
