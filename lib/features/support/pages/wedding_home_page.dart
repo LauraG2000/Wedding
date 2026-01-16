@@ -371,7 +371,7 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                             const SizedBox(height: PaddingValues.p16),
 
                             Text(
-                              'In quanti sarete?*',
+                              'In quanti sarete? (in totale)*',
                               style: Theme.of(
                                 context,
                               ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
@@ -450,7 +450,7 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                         children: [
                           Icon(
                             Icons.wallet_giftcard_rounded,
-                            size: isDesktopOrTablet ? IconSize.s56 : IconSize.s40,
+                            size: isDesktopOrTablet ? IconSize.s48 : IconSize.s34,
                             color: Theme.of(context).colorScheme.primary,
                           ),
                           const SizedBox(height: PaddingValues.p10),
@@ -496,24 +496,11 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                           const SizedBox(height: PaddingValues.p16),
 
                           // --- PULSANTE LISTA MATRIMONIO ---
-                          Center(
-                            child: SizedBox(
-                              width: isDesktopOrTablet ? 250 : 200,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (_) => const WeddingList()));
-                                },
-                                child: Text(
-                                  'Vai alla lista nozze',
-                                  textAlign: TextAlign.center,
-                                  maxLines: 2,
-                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    fontWeight: FontWeight.w400,
-                                    color: Theme.of(context).colorScheme.onSecondary,
-                                  ),
-                                ),
-                              ),
-                            ),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (_) => const WeddingList()));
+                            },
+                            child: const Text('Vai alla lista matrimonio'),
                           ),
 
                           const SizedBox(height: PaddingValues.p10),
