@@ -354,8 +354,7 @@ class _WeddingHomeEveningState extends State<WeddingHomeEvening> {
                                   onPressed: submitForm,
                                   child: Text(
                                     'Invia',
-                                    textAlign: TextAlign.center,
-                                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                       fontWeight: FontWeight.w700,
                                       color: Theme.of(context).colorScheme.onSecondary,
                                     ),

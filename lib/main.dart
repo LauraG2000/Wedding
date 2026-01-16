@@ -6,10 +6,10 @@ import 'landing/landing_page.dart';
 
 void main() {
   // Inizializziamo il servizio Chopper come singleton
-  final ApiService apiService = ApiService.create(baseUrl: 'http://34.122.221.12:8000');
+  final ApiService apiService = ApiService.create(baseUrl: '/api/');
 
-  // ''
-  //  '/api/'
+  // 'http://34.122.221.12:8000'
+  //
 
   runApp(MyApp(apiService: apiService));
 }
