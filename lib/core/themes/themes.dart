@@ -69,9 +69,24 @@ class Themes {
     // RADIO BUTTON THEME
     radioTheme: RadioThemeData(fillColor: WidgetStateProperty.all(darkBrown)),
 
-    // ELEVATED BUTTON THEME
+    // ELEVATED BUTTON THEME (GLOBAL)
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(backgroundColor: darkBrown, foregroundColor: Colors.white),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: darkBrown,
+        foregroundColor: Colors.white,
+
+        // altezza/padding uniforme
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+
+        // font coerente con il tema
+        textStyle: const TextStyle(fontFamily: 'Raleway', fontSize: 14, fontWeight: FontWeight.w600, letterSpacing: 0.5),
+
+        // bordi coerenti con i tuoi input
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(RadiusValues.r20)),
+
+        // profondità coerente
+        elevation: 3,
+      ),
     ),
 
     // DROPDOWN STYLE GLOBALE

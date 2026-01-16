@@ -195,7 +195,7 @@ class _WeddingHomeEveningState extends State<WeddingHomeEvening> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(Icons.location_on, size: 25, color: Theme.of(context).colorScheme.primary),
-                              const SizedBox(height: PaddingValues.p10),
+                              const SizedBox(width: PaddingValues.p10),
                               Flexible(
                                 child: Text(
                                   'Villa Vitturi, Via Saltore, 1, 31052 Saltore TV',
@@ -328,34 +328,37 @@ class _WeddingHomeEveningState extends State<WeddingHomeEvening> {
                             const SizedBox(height: PaddingValues.p16),
 
                             Text(
-                              'Spazio per note',
+                              'Spazio per NOTE',
                               style: Theme.of(
                                 context,
                               ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
                             ),
 
-                            SizedBox(
-                              child: TextFormField(
-                                controller: _noteController,
-                                maxLines: 1,
-                                textAlignVertical: TextAlignVertical.center,
-                                decoration: InputDecoration(
-                                  labelText: 'Note',
-                                  labelStyle: Theme.of(
-                                    context,
-                                  ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
-                                ),
+                            TextFormField(
+                              controller: _noteController,
+                              minLines: 1,
+                              maxLines: 4,
+                              maxLength: 200,
+                              textAlignVertical: TextAlignVertical.center,
+                              decoration: InputDecoration(
+                                counterStyle: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.grey),
+                                labelStyle: Theme.of(
+                                  context,
+                                ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
                               ),
                             ),
                             const SizedBox(height: PaddingValues.p32),
-                            ElevatedButton(onPressed: submitForm, child: const Text('Invia')),
+                            SizedBox(
+                              width: double.infinity,
+                              child: ElevatedButton(onPressed: submitForm, child: const Text('Invia')),
+                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: PaddingValues.p10),
+                  const SizedBox(height: PaddingValues.p16),
                   // ---- CONTAINER IBAN & LISTA ----
                   Center(
                     child: Container(
@@ -375,30 +378,40 @@ class _WeddingHomeEveningState extends State<WeddingHomeEvening> {
                         children: [
                           Icon(
                             Icons.wallet_giftcard_rounded,
-                            size: isDesktopOrTablet ? IconSize.s48 : IconSize.s34,
+                            size: isDesktopOrTablet ? IconSize.s56 : IconSize.s40,
                             color: Theme.of(context).colorScheme.primary,
                           ),
-                          const SizedBox(height: PaddingValues.p10),
 
                           // --- TESTO DI TRANSIZIONE CORDIALE ---
-                          const SizedBox(height: PaddingValues.p20),
+                          const SizedBox(height: PaddingValues.p16),
                           Text(
                             'Se desiderate farci un pensiero, abbiamo preparato una lista dedicata grazie di cuore!',
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              fontStyle: FontStyle.italic,
-                              color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.8),
-                            ),
+                            style: Theme.of(
+                              context,
+                            ).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500, color: Theme.of(context).colorScheme.surfaceDim),
                           ),
 
                           const SizedBox(height: PaddingValues.p16),
 
-                          // --- PULSANTE LISTA MATRIMONIO ---
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (_) => const WeddingList()));
-                            },
-                            child: const Text('Vai alla lista matrimonio'),
+                          Center(
+                            child: SizedBox(
+                              width: isDesktopOrTablet ? 250 : 200,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (_) => const WeddingList()));
+                                },
+                                child: Text(
+                                  'Vai alla lista nozze',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    color: Theme.of(context).colorScheme.onSecondary,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
 
                           const SizedBox(height: PaddingValues.p16),

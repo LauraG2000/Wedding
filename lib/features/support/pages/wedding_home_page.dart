@@ -404,23 +404,22 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                             const SizedBox(height: PaddingValues.p16),
 
                             Text(
-                              'Spazio per note (es: vegano/a)',
+                              'Spazio per NOTE (es: vegano/a)',
                               style: Theme.of(
                                 context,
                               ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
                             ),
-
-                            SizedBox(
-                              child: TextFormField(
-                                controller: _noteController,
-                                maxLines: 1,
-                                textAlignVertical: TextAlignVertical.center,
-                                decoration: InputDecoration(
-                                  labelText: 'Note',
-                                  labelStyle: Theme.of(
-                                    context,
-                                  ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
-                                ),
+                            TextFormField(
+                              controller: _noteController,
+                              minLines: 1,
+                              maxLines: 4,
+                              maxLength: 300,
+                              textAlignVertical: TextAlignVertical.center,
+                              decoration: InputDecoration(
+                                counterStyle: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.grey),
+                                labelStyle: Theme.of(
+                                  context,
+                                ).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.7)),
                               ),
                             ),
                             const SizedBox(height: PaddingValues.p32),
@@ -451,7 +450,7 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                         children: [
                           Icon(
                             Icons.wallet_giftcard_rounded,
-                            size: isDesktopOrTablet ? IconSize.s48 : IconSize.s34,
+                            size: isDesktopOrTablet ? IconSize.s56 : IconSize.s40,
                             color: Theme.of(context).colorScheme.primary,
                           ),
                           const SizedBox(height: PaddingValues.p10),
@@ -497,11 +496,24 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
                           const SizedBox(height: PaddingValues.p16),
 
                           // --- PULSANTE LISTA MATRIMONIO ---
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (_) => const WeddingList()));
-                            },
-                            child: const Text('Vai alla lista matrimonio'),
+                          Center(
+                            child: SizedBox(
+                              width: isDesktopOrTablet ? 250 : 200,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (_) => const WeddingList()));
+                                },
+                                child: Text(
+                                  'Vai alla lista nozze',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    color: Theme.of(context).colorScheme.onSecondary,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
 
                           const SizedBox(height: PaddingValues.p10),
