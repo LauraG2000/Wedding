@@ -134,6 +134,8 @@ class _WeddingHomeEveningState extends State<WeddingHomeEvening> {
             SafeArea(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(PaddingValues.p12),
+                physics: const ClampingScrollPhysics(), // evita “rimbalzi” strani su mobile web
+                keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag, // chiude la tastiera scrollando
                 child: ConstrainedBox(
                   constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top),
                   child: Column(
