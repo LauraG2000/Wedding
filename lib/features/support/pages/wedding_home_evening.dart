@@ -132,13 +132,14 @@ class _WeddingHomeEveningState extends State<WeddingHomeEvening> {
             Image.asset('assets/icons/bg.png', fit: BoxFit.cover),
 
             SafeArea(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(PaddingValues.p12),
-                physics: const ClampingScrollPhysics(), // evita “rimbalzi” strani su mobile web
-                keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag, // chiude la tastiera scrollando
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top),
+              child: Align(
+                alignment: Alignment.topCenter, // forza il contenuto a partire dall’alto
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(PaddingValues.p12),
+                  physics: const ClampingScrollPhysics(),
+                  keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       // ---- TITOLO ----
                       Text(
