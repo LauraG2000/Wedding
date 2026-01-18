@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wedding/core/data/services/api_service.dart';
 import 'core/themes/themes.dart';
-import 'landing/landing_page.dart';
+import 'package:wedding/features/support/pages/wedding_home_page.dart';
+import 'package:wedding/features/support/pages/wedding_home_evening.dart';
+import 'package:wedding/features/support/pages/invalid_page.dart';
 
 void main() {
   // Inizializziamo il servizio Chopper come singleton
   final ApiService apiService = ApiService.create(baseUrl: '/api/');
 
-  // 'http://34.122.221.12:8000'
+  //  'http://34.122.221.12:8000'
   //
 
   runApp(MyApp(apiService: apiService));
@@ -27,7 +29,24 @@ class MyApp extends StatelessWidget {
       theme: Themes.mainTheme.copyWith(
         appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent, elevation: 0, surfaceTintColor: Colors.transparent),
       ),
-      home: LandingPage(apiService: apiService),
+
+      // Gestione delle rotte dinamiche in base al parametro 'mode'
+      onGenerateRoute: (settings) {
+        final uri = Uri.parse(settings.name ?? '');
+
+        final mode = uri.queryParameters['mode'];
+
+        if (mode == 'day') {
+          return MaterialPageRoute(builder: (_) => WeddingHomePage(apiService: apiService));
+        }
+
+        if (mode == 'night') {
+          return MaterialPageRoute(builder: (_) => WeddingHomeEvening(apiService: apiService));
+        }
+
+        return MaterialPageRoute(builder: (_) => InvalidPage(apiService: apiService));
+      },
+
       builder: (context, child) {
         return AnnotatedRegion<SystemUiOverlayStyle>(
           value: const SystemUiOverlayStyle(
