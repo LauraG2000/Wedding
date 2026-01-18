@@ -32,8 +32,7 @@ class MyApp extends StatelessWidget {
 
       // Gestione delle rotte dinamiche in base al parametro 'mode'
       onGenerateRoute: (settings) {
-        final uri = Uri.parse(settings.name ?? '');
-
+        final uri = Uri.base; // 🔹 qui leggi sempre l'URL corretto
         final mode = uri.queryParameters['mode'];
 
         if (mode == 'day') {
@@ -46,7 +45,6 @@ class MyApp extends StatelessWidget {
 
         return MaterialPageRoute(builder: (_) => InvalidPage(apiService: apiService));
       },
-
       builder: (context, child) {
         return AnnotatedRegion<SystemUiOverlayStyle>(
           value: const SystemUiOverlayStyle(
