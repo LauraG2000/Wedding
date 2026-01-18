@@ -139,6 +139,7 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
     final isDesktopOrTablet = MediaQuery.of(context).size.width >= 600;
 
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: SelectionArea(
         child: Stack(
           fit: StackFit.expand,
