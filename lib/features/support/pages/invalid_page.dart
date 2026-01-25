@@ -56,19 +56,19 @@ class InvalidPage extends StatelessWidget {
 
                       const SizedBox(height: PaddingValues.p12),
 
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (_) => WeddingHomeEvening(apiService: apiService)));
-                        },
-                        child: const Text('Apri Home Sera (debug)'),
-                      ),
+                      // ElevatedButton(
+                      //   onPressed: () {
+                      //     Navigator.of(context).push(MaterialPageRoute(builder: (_) => WeddingHomeEvening(apiService: apiService)));
+                      //   },
+                      //   child: const Text('Apri Home Sera (debug)'),
+                      // ),
 
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (_) => WeddingHomePage(apiService: apiService)));
-                        },
-                        child: const Text('Apri Home Giorno (debug)'),
-                      ),
+                      // ElevatedButton(
+                      //   onPressed: () {
+                      //     Navigator.of(context).push(MaterialPageRoute(builder: (_) => WeddingHomePage(apiService: apiService)));
+                      //   },
+                      //   child: const Text('Apri Home Giorno (debug)'),
+                      // ),
                     ],
                   ),
                 ),
