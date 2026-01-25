@@ -142,11 +142,13 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
       canPop: true,
       onPopInvokedWithResult: (didPop, result) {
         // Forza la chiusura della tastiera quando si preme "Indietro"
-        FocusManager.instance.primaryFocus?.unfocus();
+        FocusScope.of(context).unfocus();
       },
       child: GestureDetector(
-        // Chiude la tastiera se tocchi in un punto vuoto dello schermo
-        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        // HitTestBehavior.opaque assicura che il tocco venga catturato
+        // anche se tocchi aree trasparenti dello sfondo
+        behavior: HitTestBehavior.opaque,
+        onTap: () => FocusScope.of(context).unfocus(),
 
         child: Scaffold(
           resizeToAvoidBottomInset: true,
