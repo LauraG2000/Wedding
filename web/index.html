@@ -37,6 +37,19 @@
 
 <body>
   <script src="flutter_bootstrap.js" async></script>
+  <script>
+    // Questo script riposiziona forzatamente la finestra in alto 
+    // ogni volta che un campo di testo perde il focus (chiusura tastiera)
+    window.addEventListener('focusout', function () {
+      window.scrollTo(0, 0);
+    });
+
+    // Gestisce il ridimensionamento anomalo su alcuni browser mobile
+    window.visualViewport.addEventListener('resize', () => {
+      document.body.style.height = window.visualViewport.height + 'px';
+      window.scrollTo(0, 0);
+    });
+  </script>
 </body>
 
 </html>

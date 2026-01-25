@@ -149,7 +149,7 @@ class _WeddingHomePageState extends State<WeddingHomePage> {
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
 
         child: Scaffold(
-          resizeToAvoidBottomInset: false,
+          resizeToAvoidBottomInset: true,
           body: SelectionArea(
             child: Stack(
               fit: StackFit.expand,
