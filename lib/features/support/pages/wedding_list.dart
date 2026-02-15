@@ -108,9 +108,59 @@ class WeddingList extends StatelessWidget {
                             const SizedBox(height: PaddingValues.p12),
 
                             Text(
+                              'Idee regalo – Budget 50 / 100',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+                            ),
+                            const SizedBox(height: PaddingValues.p16),
+
+                            _item(
+                              context,
+                              icon: Icons.light,
+                              iconSize: IconSize.s27,
+                              title: 'Lampada da terra (x2)',
+                              subtitle: 'Coppia di lampade per il soggiorno - selezione: multicolore (lampade tonde)',
+                              link:
+                                  'https://www.amazon.it/lianheng-Quadrato-Paralume-Ricambio-Pulsante/dp/B0CQP8RPFG/ref=sr_1_20?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3ML3QZJKFEQAG&dib=eyJ2IjoiMSJ9.sQC9V6NKOAYEY33J9vT52TSSBOdvJEhQtvWrjEljhTm6JDBNTh8LN7NCG6LEAPj0XhRneS8q67e1rx4bYgZViNiNSxZhMGjCDFxba7fiEhQh7Q1Om38_vImgefsCdSM1E1aEYM4wCGp-uk6ZTWNyNOKDpNxCOngYLXevukKVHTRD1k4dnDeyHYUHY0vLshPLa3PRSDb5TI2r6Oyk-0VChXb66ACXaXwPkWQYbnWRMpsFhxSJTG9pJU995ZRO5T4Uj2cyAX_43TrYTJKzkGdFVipn4GrZu00Nyn5VthUWWCQ.GEI8PTjQS4NivpmX00A3h9PfUbmbiOKQTqnlAyN8u_Q&dib_tag=se&keywords=piedistallo%2Blampada%2Bdi%2Bcarta&qid=1771177036&sprefix=piedistallo%2Blampada%2Bdi%2Bcarta%2Caps%2C246&sr=8-20&th=1',
+                            ),
+                            const SizedBox(height: PaddingValues.p16),
+
+                            _item(
+                              context,
+                              icon: Icons.bed_outlined,
+                              iconSize: IconSize.s32,
+                              title: 'Copri piumino matrimoniale',
+                              subtitle:
+                                  'Set completo (1 copripiumino + 2 federe) - dimensione: 240x220/50x80 cm- colore: giallo / arancio ',
+                              link: 'https://www.ikea.com/it/it/p/hamnsenap-copripiumino-e-2-federe-giallo-fantasia-30614088/',
+                            ),
+                            const SizedBox(height: PaddingValues.p16),
+
+                            _item(
+                              context,
+                              icon: Icons.broken_image_outlined,
+                              iconSize: IconSize.s32,
+                              title: 'Copriletto matrimoniale',
+                              subtitle: ' dimensione:Copriletto, 230x250 cm - colore: giallo / beige',
+                              link: 'https://www.ikea.com/it/it/p/indira-copriletto-giallo-beige-00582630/#content',
+                            ),
+                            const SizedBox(height: PaddingValues.p16),
+
+                            Text(
                               'Idee regalo – Budget 100 / 170',
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+                            ),
+                            const SizedBox(height: PaddingValues.p16),
+
+                            _item(
+                              context,
+                              icon: Icons.cleaning_services_outlined,
+                              iconSize: IconSize.s32,
+                              title: 'Lava Tappezzeria',
+                              subtitle: 'Motore da 330W, 36988',
+                              link:
+                                  'https://www.amazon.it/dp/B07GXS35PG?ref=cm_sw_r_cso_tg_apan_dp_DVN4KH4GVGZW1MK9TCAX_1&ref_=cm_sw_r_cso_tg_apan_dp_DVN4KH4GVGZW1MK9TCAX_1&social_share=cm_sw_r_cso_tg_apan_dp_DVN4KH4GVGZW1MK9TCAX_1&badgeInsights=insights',
                             ),
                             const SizedBox(height: PaddingValues.p16),
 
@@ -182,11 +232,12 @@ class WeddingList extends StatelessWidget {
 
                             _item(
                               context,
-                              icon: Icons.light,
+                              icon: Icons.auto_fix_high_outlined,
                               iconSize: IconSize.s27,
-                              title: 'Lampada da terra (x2)',
-                              subtitle: 'Ci piacerebbe una coppia di queste lampade per il soggiorno',
-                              link: 'https://www.amazon.it/ALEEIK-Semplice-Paralume-Illuminazione-Soggiorno/dp/B0CP9CTGYF',
+                              title: 'Robot aspirapolvere e lavapavimenti',
+                              subtitle: 'DREAME L10s Ultra Gen 2',
+                              link:
+                                  'https://www.amazon.it/dp/B0DCVYS9FQ/?coliid=I3R78DLPXPOCT9&colid=HXH49F53IVGC&psc=1&ref_=cm_sw_r_apann_lstpd_P7HQA6TS86BPHTCW47N8&language=en-US',
                             ),
                           ],
                         ),
