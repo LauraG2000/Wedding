@@ -131,8 +131,8 @@ class WeddingList extends StatelessWidget {
                               iconSize: IconSize.s32,
                               title: 'Copri piumino matrimoniale',
                               subtitle:
-                                  'Set completo (1 copripiumino + 2 federe) - dimensione: 240x220/50x80 cm- colore: giallo / arancio ',
-                              link: 'https://www.ikea.com/it/it/p/hamnsenap-copripiumino-e-2-federe-giallo-fantasia-30614088/',
+                                  'Set completo (1 copripiumino + 2 federe) - dimensione: 240x220/50x80 cm- colore: rosa-arancio / bianco ',
+                              link: 'https://www.ikea.com/it/it/p/rodgersia-copripiumino-e-2-federe-rosa-bianco-70579441/',
                             ),
                             const SizedBox(height: PaddingValues.p16),
 
@@ -239,6 +239,17 @@ class WeddingList extends StatelessWidget {
                               link:
                                   'https://www.amazon.it/dp/B0DCVYS9FQ/?coliid=I3R78DLPXPOCT9&colid=HXH49F53IVGC&psc=1&ref_=cm_sw_r_apann_lstpd_P7HQA6TS86BPHTCW47N8&language=en-US',
                             ),
+                            // --- PS finale ---
+                            const SizedBox(height: PaddingValues.p10),
+                            Text(
+                              'La lista viene sempre aggiornata. I regali che vengono acquistati non compariranno più qui.',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                fontStyle: FontStyle.italic,
+                                color: Theme.of(context).colorScheme.surfaceDim.withValues(alpha: 0.9),
+                              ),
+                            ),
+                            const SizedBox(height: PaddingValues.p16),
                           ],
                         ),
                       ),
@@ -262,7 +273,7 @@ class WeddingList extends StatelessWidget {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.9),
+                        color: Colors.white.withValues(alpha: 0.9),
                         shape: BoxShape.circle,
                         boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 4, offset: Offset(0, 2))],
                       ),
