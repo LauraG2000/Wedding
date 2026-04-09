@@ -204,6 +204,17 @@ class WeddingList extends StatelessWidget {
 
                             _item(
                               context,
+                              icon: Icons.curtains_closed,
+                              iconSize: IconSize.s27,
+                              title: 'Tende per camere da letto (q.tà: x6)',
+                              subtitle: '132 cm x 183 cm, colore: panna : semitrasparenti',
+                              link:
+                                  'https://www.leroymerlin.it/prodotti/tende-semitrasparenti-filtranti-luce-ideali-per-soggiorno-e-camera-da-letto-proteggono-privacy-132-cm-x-183-cm-colore-lino-96879568.html',
+                            ),
+                            const SizedBox(height: PaddingValues.p16),
+
+                            _item(
+                              context,
                               icon: Icons.table_bar_outlined,
                               iconSize: IconSize.s27,
                               title: 'Tavolino ovale (PRIMA scelta tra i tavolini)',
