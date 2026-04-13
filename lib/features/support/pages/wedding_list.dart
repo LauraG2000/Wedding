@@ -114,15 +114,23 @@ class WeddingList extends StatelessWidget {
                             ),
                             const SizedBox(height: PaddingValues.p16),
 
-                            _item(
+                            _itemNotAvailable(
                               context,
                               icon: Icons.light,
                               iconSize: IconSize.s27,
                               title: 'Lampada da terra (x2)',
-                              subtitle: 'Coppia di lampade per il soggiorno - selezione: multicolore (lampade tonde)',
-                              link:
-                                  'https://www.amazon.it/lianheng-Quadrato-Paralume-Ricambio-Pulsante/dp/B0CQP8RPFG/ref=sr_1_20?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3ML3QZJKFEQAG&dib=eyJ2IjoiMSJ9.sQC9V6NKOAYEY33J9vT52TSSBOdvJEhQtvWrjEljhTm6JDBNTh8LN7NCG6LEAPj0XhRneS8q67e1rx4bYgZViNiNSxZhMGjCDFxba7fiEhQh7Q1Om38_vImgefsCdSM1E1aEYM4wCGp-uk6ZTWNyNOKDpNxCOngYLXevukKVHTRD1k4dnDeyHYUHY0vLshPLa3PRSDb5TI2r6Oyk-0VChXb66ACXaXwPkWQYbnWRMpsFhxSJTG9pJU995ZRO5T4Uj2cyAX_43TrYTJKzkGdFVipn4GrZu00Nyn5VthUWWCQ.GEI8PTjQS4NivpmX00A3h9PfUbmbiOKQTqnlAyN8u_Q&dib_tag=se&keywords=piedistallo%2Blampada%2Bdi%2Bcarta&qid=1771177036&sprefix=piedistallo%2Blampada%2Bdi%2Bcarta%2Caps%2C246&sr=8-20&th=1',
+                              subtitle: 'Coppia di lampade per il soggiorno - selezione: multicolore',
                             ),
+
+                            // _item(
+                            //   context,
+                            //   icon: Icons.light,
+                            //   iconSize: IconSize.s27,
+                            //   title: 'Lampada da terra (x2)',
+                            //   subtitle: 'Coppia di lampade per il soggiorno - selezione: multicolore (lampade tonde)',
+                            //   link:
+                            //       'https://www.amazon.it/lianheng-Quadrato-Paralume-Ricambio-Pulsante/dp/B0CQP8RPFG/ref=sr_1_20?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3ML3QZJKFEQAG&dib=eyJ2IjoiMSJ9.sQC9V6NKOAYEY33J9vT52TSSBOdvJEhQtvWrjEljhTm6JDBNTh8LN7NCG6LEAPj0XhRneS8q67e1rx4bYgZViNiNSxZhMGjCDFxba7fiEhQh7Q1Om38_vImgefsCdSM1E1aEYM4wCGp-uk6ZTWNyNOKDpNxCOngYLXevukKVHTRD1k4dnDeyHYUHY0vLshPLa3PRSDb5TI2r6Oyk-0VChXb66ACXaXwPkWQYbnWRMpsFhxSJTG9pJU995ZRO5T4Uj2cyAX_43TrYTJKzkGdFVipn4GrZu00Nyn5VthUWWCQ.GEI8PTjQS4NivpmX00A3h9PfUbmbiOKQTqnlAyN8u_Q&dib_tag=se&keywords=piedistallo%2Blampada%2Bdi%2Bcarta&qid=1771177036&sprefix=piedistallo%2Blampada%2Bdi%2Bcarta%2Caps%2C246&sr=8-20&th=1',
+                            // ),
                             const SizedBox(height: PaddingValues.p16),
 
                             _item(
@@ -348,6 +356,76 @@ class WeddingList extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _itemNotAvailable(
+    BuildContext context, {
+    required IconData icon,
+    required double iconSize,
+    required String title,
+    String? subtitle,
+  }) {
+    return Stack(
+      children: [
+        // Container principale grigio e opaco
+        Opacity(
+          opacity: 0.5,
+          child: Container(
+            padding: const EdgeInsets.all(PaddingValues.p16),
+            decoration: BoxDecoration(
+              color: Colors.grey.withValues(alpha: 0.2),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.grey.withValues(alpha: 0.4)),
+            ),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: Spacing.h50,
+                  child: Center(
+                    child: Icon(icon, size: iconSize, color: Colors.grey),
+                  ),
+                ),
+                const SizedBox(width: PaddingValues.p16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          decoration: TextDecoration.lineThrough, // Effetto barrato
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(subtitle ?? '', style: Theme.of(context).textTheme.bodySmall),
+                    ],
+                  ),
+                ),
+                const Icon(Icons.block, size: 18, color: Colors.grey),
+              ],
+            ),
+          ),
+        ),
+
+        // Targhettino "Non disponibile"
+        Positioned(
+          top: 12,
+          right: 12,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 244, 101, 54).withValues(alpha: 0.8),
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: const Text(
+              'NON DISPONIBILE',
+              style: TextStyle(color: Colors.white, fontSize: 9, fontWeight: FontWeight.bold, letterSpacing: 0.5),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
