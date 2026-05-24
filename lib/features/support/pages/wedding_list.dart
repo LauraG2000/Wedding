@@ -133,25 +133,42 @@ class WeddingList extends StatelessWidget {
                             // ),
                             const SizedBox(height: PaddingValues.p16),
 
-                            _item(
+                            _itemNotAvailable(
                               context,
                               icon: Icons.bed_outlined,
                               iconSize: IconSize.s32,
                               title: 'Copri piumino matrimoniale',
                               subtitle:
                                   'Set completo (1 copripiumino + 2 federe) - dimensione: 240x220/50x80 cm- colore: rosa-arancio / bianco ',
-                              link: 'https://www.ikea.com/it/it/p/rodgersia-copripiumino-e-2-federe-rosa-bianco-70579441/',
                             ),
+
+                            // _item(
+                            //   context,
+                            //   icon: Icons.bed_outlined,
+                            //   iconSize: IconSize.s32,
+                            //   title: 'Copri piumino matrimoniale',
+                            //   subtitle:
+                            //       'Set completo (1 copripiumino + 2 federe) - dimensione: 240x220/50x80 cm- colore: rosa-arancio / bianco ',
+                            //   link: 'https://www.ikea.com/it/it/p/rodgersia-copripiumino-e-2-federe-rosa-bianco-70579441/',
+                            // ),
                             const SizedBox(height: PaddingValues.p16),
 
-                            _item(
+                            _itemNotAvailable(
                               context,
                               icon: Icons.broken_image_outlined,
                               iconSize: IconSize.s32,
                               title: 'Copriletto matrimoniale',
                               subtitle: ' dimensione:Copriletto, 230x250 cm - colore: giallo / beige',
-                              link: 'https://www.ikea.com/it/it/p/indira-copriletto-giallo-beige-00582630/#content',
                             ),
+
+                            // _item(
+                            //   context,
+                            //   icon: Icons.broken_image_outlined,
+                            //   iconSize: IconSize.s32,
+                            //   title: 'Copriletto matrimoniale',
+                            //   subtitle: ' dimensione:Copriletto, 230x250 cm - colore: giallo / beige',
+                            //   link: 'https://www.ikea.com/it/it/p/indira-copriletto-giallo-beige-00582630/#content',
+                            // ),
                             const SizedBox(height: PaddingValues.p16),
 
                             Text(
