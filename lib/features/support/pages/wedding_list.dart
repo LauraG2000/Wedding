@@ -171,6 +171,17 @@ class WeddingList extends StatelessWidget {
                             // ),
                             const SizedBox(height: PaddingValues.p16),
 
+                            _item(
+                              context,
+                              icon: Icons.water_drop_outlined,
+                              iconSize: IconSize.s32,
+                              title: 'Vaporella',
+                              subtitle: 'KLONA, 1050 watt',
+                              link:
+                                  'https://www.amazon.it/dp/B0GY2QVJVW?ref=cm_sw_r_cso_wa_apan_dp_V9HDK56JPZEJBEW2EGAA&ref_=cm_sw_r_cso_wa_apan_dp_V9HDK56JPZEJBEW2EGAA&social_share=cm_sw_r_cso_wa_apan_dp_V9HDK56JPZEJBEW2EGAA&th=1',
+                            ),
+                            const SizedBox(height: PaddingValues.p16),
+
                             Text(
                               'Idee regalo – Budget 100 / 170',
                               textAlign: TextAlign.center,
